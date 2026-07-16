@@ -44,16 +44,3 @@ In the interview, the recruiter will ask how you verified that your code doesn't
    ```
 3. Look at the output. It should say:
    `All heap blocks were freed -- no leaks are possible`.
-
----
-
-## 💡 Quick Interview Q&A Cheatsheet (Read this before the interview!)
-
-### Q1: Why is this project "memory optimized"?
-**Answer:** Standard linked lists call `new` (allocation) every time an item is added, and `delete` (deallocation) every time an item is removed. This causes heap fragmentation and slows down performance. My project intercepts deletion and stores the node in a `freeHead` pool. When we need a new node, we reuse it, bypassing the OS memory manager completely.
-
-### Q2: What is the complexity of your custom allocator?
-**Answer:** It is $O(1)$ constant time. Since the recycled nodes are linked together, pushing a node to the free pool or popping a node from the free pool is just a pointer reassignment.
-
-### Q3: How did you ensure there are no memory leaks?
-**Answer:** Since deleted nodes are not freed immediately (they are stored in the pool), we must make sure to clear both the active list AND the free pool when the program terminates. The function `freeAllMemory()` traverses both lists and deletes every remaining node.
