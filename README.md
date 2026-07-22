@@ -9,7 +9,7 @@ A simple, academic-style DSA project designed to demonstrate **low-level memory 
 * **Memory Optimization:** Custom memory recycling (Node Pool/Free List) to bypass constant OS allocations (`new` and `delete`) and avoid heap fragmentation.
 * **Memory Leak Prevention:** Deallocating both active and recycled nodes during termination (monitored and verified via Valgrind).
 * **Platform Independent:** Written in ISO standard C++ with standard input/output streams, making it executable on Windows, Linux, and macOS.
-* **Complexity Analysis:** Node allocation/recycling is $O(1)$ constant time, list insertion is $O(1)$ constant time, and final cleanup is $O(N)$ linear time.
+* **Complexity Analysis:** Node allocation/recycling is $O(1)$ constant time, list insertion is $O(1)$ constant time, and final cleanup is $O(N)$ linear time. 
 
 ---
 
