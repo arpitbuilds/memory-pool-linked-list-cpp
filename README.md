@@ -17,11 +17,3 @@ g++ main.cpp -o main
 ./main
 ```
 
-## Memory Leak Verification (Valgrind)
-
-Verify memory safety using Valgrind:
-
-```bash
-g++ -g main.cpp -o main
-valgrind --leak-check=full ./main
-```
